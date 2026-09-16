@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NITRO_PRESET = "netlify"
+  # Public (publishable) backend config — safe to expose in the browser.
+  # Override these in Netlify UI if you point the site at another backend.
+  VITE_SUPABASE_URL = "https://pcbptjcevhxlrdmeupwq.supabase.co"
+  VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_mJFcqoRU_KtxM-UR8CH9lg_9I6QiIZW"
+  VITE_SUPABASE_PROJECT_ID = "pcbptjcevhxlrdmeupwq"
+  SUPABASE_URL = "https://pcbptjcevhxlrdmeupwq.supabase.co"
+  SUPABASE_PUBLISHABLE_KEY = "sb_publishable_mJFcqoRU_KtxM-UR8CH9lg_9I6QiIZW"
+  SUPABASE_PROJECT_ID = "pcbptjcevhxlrdmeupwq"
