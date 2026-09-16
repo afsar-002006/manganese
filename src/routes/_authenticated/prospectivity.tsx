@@ -13,6 +13,7 @@ import type { MapLayers } from "@/components/map/ProspectivityMap";
 import { ZoneDetailPanel } from "@/components/map/ZoneDetailPanel";
 import { BoreholeDetailModal } from "@/components/map/BoreholeDetailModal";
 import { DataSourcesPanel } from "@/components/app/DataSourcesPanel";
+import { DrillPlanner } from "@/components/app/DrillPlanner";
 import { cn } from "@/lib/utils";
 
 const ProspectivityMap = lazy(() => import("@/components/map/ProspectivityMap"));
@@ -101,12 +102,15 @@ function ProspectivityPage() {
   ];
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <PageHeader
-        title="Manganese Prospectivity &amp; Web GIS Map"
-        subtitle="Modelled favourability for further exploration. Scores express prospectivity — they are not a detection of manganese and not a statement of reserves."
+        title="Manganese Prospectivity & Web GIS Map"
+        subtitle="Modelled favourability for further exploration with spatial target estimation."
         actions={<ApproximateLocationBadge />}
       />
+
+      {/* Drill Planner Component */}
+      <DrillPlanner />
 
       <div className="grid gap-5 xl:grid-cols-4">
         <Panel

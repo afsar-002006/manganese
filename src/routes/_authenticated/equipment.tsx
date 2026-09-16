@@ -7,6 +7,7 @@ import { EmptyState, PageHeader, Panel } from "@/components/app/PageHeader";
 import { DemoDisclaimer } from "@/components/app/DemoBadge";
 import { StatCard } from "@/components/app/StatCard";
 import { pct } from "@/lib/format";
+import { DigitalTwinPit } from "@/components/app/DigitalTwinPit";
 import {
   Table,
   TableBody,
@@ -58,11 +59,14 @@ function EquipmentPage() {
   const idle = assets.filter((e) => e.status === "idle").length;
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <PageHeader
-        title="Equipment Analytics"
-        subtitle="Availability and utilisation across the tracked fleet, with assets flagged for redeployment."
+        title="Equipment Analytics & 3D Digital Twin"
+        subtitle="Real-time pit fleet telemetry, bench location tracking, availability and utilisation statistics."
       />
+
+      {/* Digital Twin 3D Pit & Live Fleet Telemetry */}
+      <DigitalTwinPit />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <StatCard

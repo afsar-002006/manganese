@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/table";
 import { BoreholeDetailModal } from "@/components/map/BoreholeDetailModal";
 import { DataSourcesPanel } from "@/components/app/DataSourcesPanel";
+import { OrebodyVisualizer3D } from "@/components/3d/OrebodyVisualizer3D";
+import { CoreSpectroscopyAnalyzer } from "@/components/app/CoreSpectroscopyAnalyzer";
 import type { Borehole } from "@/services/types";
 
 export const Route = createFileRoute("/_authenticated/boreholes")({
@@ -61,12 +63,18 @@ function BoreholesPage() {
     rows.length > 0 ? rows.reduce((s, b) => s + Number(b.depth_m), 0) / rows.length : 0;
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <PageHeader
-        title="Borehole Register &amp; Lithological Profiles"
-        subtitle="Drill records underpinning the prospectivity model. Click any record to view subsurface lithology profile."
+        title="Borehole Register & Lithological Profiles"
+        subtitle="3D subsurface orebody voxels, hyperspectral drill core logs, and assay records."
         actions={<ApproximateLocationBadge />}
       />
+
+      {/* 3D Orebody Visualizer */}
+      <OrebodyVisualizer3D />
+
+      {/* Hyperspectral Core Analyzer */}
+      <CoreSpectroscopyAnalyzer />
 
       <div className="grid gap-4 sm:grid-cols-3">
         <Panel title="Records">

@@ -32,6 +32,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { DemoBadge } from "./DemoBadge";
+import { ManganeseCopilot } from "./ManganeseCopilot";
 
 const NAV = [
   { group: "Overview", items: [{ to: "/dashboard", label: "Dashboard", icon: LayoutDashboard }] },
@@ -67,6 +68,8 @@ const NAV = [
     ],
   },
 ] as const;
+
+
 
 export function AppShell({ children }: { children: ReactNode }) {
   const { mines, mineId, setMineId } = useMine();
@@ -215,6 +218,9 @@ export function AppShell({ children }: { children: ReactNode }) {
 
         <main className="flex-1 p-4 md:p-6">{children}</main>
       </div>
+
+      {/* Global AI Copilot Floating Drawer */}
+      <ManganeseCopilot />
     </div>
   );
 }

@@ -17,6 +17,8 @@ import { DemoDisclaimer } from "@/components/app/DemoBadge";
 import { StatCard } from "@/components/app/StatCard";
 import { dayLabel } from "@/lib/format";
 
+import { EsgComplianceEngine } from "@/components/app/EsgComplianceEngine";
+
 export const Route = createFileRoute("/_authenticated/weather")({
   head: () => ({
     meta: [
@@ -65,11 +67,14 @@ function WeatherPage() {
   }));
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
       <PageHeader
-        title="Weather Analysis"
-        subtitle="Rainfall exposure across the operating window, scored for haulage and blasting risk."
+        title="Weather & Environmental Risk Analysis"
+        subtitle="Rainfall exposure, Tailings Dam stability radar, and ESG environmental compliance metrics."
       />
+
+      {/* Tailings Dam & ESG Compliance Engine */}
+      <EsgComplianceEngine />
 
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <StatCard
